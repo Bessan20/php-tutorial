@@ -71,10 +71,19 @@ function summation($nums) {
 summation([5 , 7 , 4 , 7]);
 summation([5 , 11 , 2 , 7]);
 
+
+
+
+/*Replace every positive number by 1.
+Replace every negative number by 2.*/
+
 function replacement($nums) {
     foreach($nums as $num) {
         echo ($num<0) ? 2 . "\n<br>" :(($num == 0)? 0 . "\n<br>" : 1 . "\n<br>");
     }
 }
 replacement([1 , -2 , 0 ,  3 , 4]);
+
+
+
 ?>

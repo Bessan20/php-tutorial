@@ -178,4 +178,13 @@ function replaceWord($s){
 
 replaceWord("BRITISHEGYPTGHANA");
 replaceWord("ITALYKOREAEGYPTEGYPTALGERIAEGYPTZ");
+
+
+// function Enc&Dec() {
+ 
+// key = "PgEfTYaWGHjDAmxQqFLRpCJBownyUKZXkbvzIdshurMilNSVOtec#@_!=.+-*/";
+// org = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+// }
+
+
 ?>
