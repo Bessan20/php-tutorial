@@ -1,5 +1,12 @@
 <?php
 /*
+
+enctype attributes values:
+1-multipart/form-data --> data is divded into parts
+2-application/x-www-form-urlencoded -->default
+3-text/plain--> send form data as a simple text
+
+
 Why we dont use isset($_FILES["file"]) to check if a file is uploaded or not?
 if the file not uploaded :
 $_FILES["file"] = [
@@ -23,14 +30,6 @@ Error Code	Constant	      Meaning
 */
 
 
-// if(isset($_FILES["file"]) ) {
-//    echo $_FILES['file']."\n<br>";    //will cause error because $_FILES['file'] is an array and cannot be converted to string
-//    echo isset($_FILES['file'])."\n<br>";  //true
-//    echo $_FILES['file']['name']."\n<br>";   //empty string
-//     echo "File uploaded successfully.\n<br>";
-// } else {
-//     echo "No file uploaded.\n<br>";
-// }
 
 if(isset($_FILES["file"]) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
    
@@ -45,6 +44,17 @@ if(isset($_FILES["file"]) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
 } else {
     echo "No file uploaded.\n<br>";
 }
+
+
+
+// if(isset($_FILES["file"]) ) {
+//    echo $_FILES['file']."\n<br>";    //will cause error because $_FILES['file'] is an array and cannot be converted to string
+//    echo isset($_FILES['file'])."\n<br>";  //true
+//    echo $_FILES['file']['name']."\n<br>";   //empty string
+//     echo "File uploaded successfully.\n<br>";
+// } else {
+//     echo "No file uploaded.\n<br>";
+// }
 
 
 ?>
