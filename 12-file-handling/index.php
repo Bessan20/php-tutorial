@@ -6,7 +6,7 @@
 $file = fopen("text2.txt", "w");
 
 //2-write to file
-fwrite($file , "Hello World! This is a test file.\n<br>");
+fwrite( e , "Hello World! This is a test file.\n<br>");
 
 //3-read file content
 echo readfile("text2.txt")."\n<br>";
