@@ -1,0 +1,72 @@
+1-connection
+mysql
+$conn = new mysqli("localhost", "root", "", "school");
+
+if ($conn->connect_error) {
+    die("Connection failed");
+}
+
+echo "Connected successfully";
+
+
+
+pdo
+PDO php provide class to communicate with data base 
+try {
+    $pdo = new PDO(
+        "mysql:host=localhost;dbname=school",
+        "root",
+        ""                 --->DSN (DATA SOURCE NAME)
+    );
+
+    $pdo->setAttribute(
+        PDO::ATTR_ERRMODE,          ::scope resolution operator -->to access contast inside a class
+        PDO::ERRMODE_EXCEPTION
+    );
+
+    echo "Connected successfully";
+
+} catch (PDOException $e) {
+    die("Connection failed");
+}
+
+
+-------------------------------------
+Create DATABASE
+mysql
+CREATE DATABASE school;
+
+pdo
+$pdo->exec("CREATE DATABASE school");
+--------------------------------------
+create table
+mysql
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    age INT
+);
+
+pdo
+$pdo->exec("
+    CREATE TABLE students (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(100),
+        age INT
+    )
+");
+--------------------------------------
+INSERT INTO students (name, age)
+VALUES ('Ali', 17);
+
+
+
+$stmt = $pdo->prepare(
+    "INSERT INTO students (name, age)
+     VALUES (:name, :age)"
+);
+
+$stmt->execute([
+    'name' => 'Ali',
+    'age' => 17
+]);  
