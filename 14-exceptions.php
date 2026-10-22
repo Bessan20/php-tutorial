@@ -1,23 +1,21 @@
 <?php
 
+
+
 try {
-    $x = 10;
-    $y = 0;
-    if($y == 0) {
-    throw new Exception("Cannot divide by zero.");
+    $file = fopen("myfile.txt", "r");
+
+    if ($file === false) {
+        throw new Exception("Failed to open the file");
     }
-  return $x / $y;
-}
 
-catch (Exception $e) {
-    $file = $e->getFile();
-  $line = $e->getLine();
-  $code = $e->getCode();
-  $message = $e->getMessage();
-  echo "Exception thrown in $file on line $line: [Code $code] $message";
-}
+    echo "File opened successfully!";
+    fclose($file);
 
-finally {
-    echo "\n<br>Finally block executed.";
+} catch (Exception $e) {
+     echo $e->getMessage() . "<br>";
+    echo $e->getLine() . "<br>";
+    echo $e->getCode() . "<br>";
+    echo $e->getFile() . "<br>";
 }
 ?>
